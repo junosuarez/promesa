@@ -4,7 +4,7 @@ var Q = require('q')
 
 describe('promesa', function () {
   var Promise = require('../')
-  
+
   it('example', function (done) {
 
     function getUser(id) {
@@ -33,7 +33,7 @@ describe('promesa', function () {
     ])
     .then(function () { done() }, done)
 
-    
+
 
   })
 })
