@@ -1,14 +1,14 @@
 var chai = require('chai')
 chai.should()
-var Q = require('q')
+var Promise = require('bluebird')
 
 describe('promesa', function () {
-  var Promise = require('../')
+  var Promesa = require('../')
 
   it('example', function (done) {
 
     function getUser(id) {
-      return Promise(function () {
+      return Promesa(function () {
         if (!(typeof id === 'number' && Number.isFinite(id) && !Number.isNaN(id))) {
           throw new TypeError('id must be a number')
         }
@@ -17,7 +17,7 @@ describe('promesa', function () {
       })
     }
 
-    Q.all([
+    Promise.all([
       getUser(23).then(function (val) {
         val.should.deep.equal({
           id: 23,

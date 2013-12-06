@@ -21,5 +21,8 @@
   },
   "peerDependencies": {
     "q": ">=0.8"
+  },
+  "dependencies": {
+    "bluebird": "~0.11.5-0"
   }
 }

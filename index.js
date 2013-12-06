@@ -1,7 +1,7 @@
-const Q = require('q')
+var Promise = require('bluebird')
 
-module.exports = function Promise(fn) {
-  return Q.promise(function (resolve, reject) {
+module.exports = function Promesa(fn) {
+  return new Promise(function (resolve, reject) {
     try {
       resolve(fn())
     } catch (e) {
