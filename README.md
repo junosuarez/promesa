@@ -5,11 +5,11 @@ easiest way to return a promise from a function
 
 ## usage
 ```js
-var Promise = require('promesa')
+var Promesa = require('promesa')
 
 // (Number) => Promise<User>
 function getUser(id) {
-  return Promise(function () {
+  return Promesa(function () {
     if (!(typeof id === 'number' && Number.isFinite(id) && !Number.isNaN(id))) {
       throw new TypeError('id must be a number')
     }
@@ -21,13 +21,11 @@ function getUser(id) {
 In a real implementation, you would probably have some sort of
 underlying asynchronous value, like a database lookup.
 
-`Promise` lets you mix and match returning Promise values,
+`Promesa` lets you mix and match returning Promise values,
 synchronous values, and throwing. As explained in
 [You're missing the point of promises][1], Promises/A+ lets
 you reason about your code in terms of `return` and `throw`
 semantics you already know and love.
-
-The npm package name is `promesa`, but it will probably make your code more readable to require it as `promise` or `Promise` as shown in the example.
 
 [1]: https://gist.github.com/domenic/3889970
 
@@ -37,7 +35,7 @@ The npm package name is `promesa`, but it will probably make your code more read
 
 Promesa is ideal for making functions which are working with other promises as well as synchronous logic, for example precondition (guard) checking, authorization logic, etc. It assumes that any asynchronous values you're working with are already represented as Promises.
 
-If you need to create promises from other kinds of asynchronous control flow patterns, such as EventEmitters or callback continuations, consider using something like `Q.promise`
+If you need to create promises from other kinds of asynchronous control flow patterns, such as EventEmitters or callback continuations, consider using something like `bluebird`'s `Promise` constructor.
 
 ## api
 
